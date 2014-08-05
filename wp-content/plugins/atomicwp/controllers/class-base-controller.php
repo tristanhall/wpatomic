@@ -16,6 +16,8 @@ class BaseController {
     */
    public static $icon = 'dashicons-share';
    
+   public static $default_callback = array( 'Atomic\Dashboard', 'get_index' );
+   
    /**
     * Set this to your plugin's "short namespace".
     * This is for database table and variable prefixes.
