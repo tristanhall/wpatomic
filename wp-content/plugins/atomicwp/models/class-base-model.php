@@ -63,6 +63,42 @@ abstract class BaseModel extends BaseController {
       //does nothing yet.
    }
    
+   /**
+    * 
+    * Database models will inherit this method and can override the method with their own edit link.
+    * The default method returns a link to the current controller's "edit" method.
+    * Ex: admin.php?page=<current-page>&c=<current-controller>&m=edit&<id-field>=<object-id>
+    * If the "edit" method doesn't exist, a blank string is returned.
+    * @return string
+    */
+   public function edit_link() {
+      $page = filter_input( INPUT_GET, 'page' );
+      $id_var = static::$id_field;
+      $class = explode( '\\', get_called_class() );
+      $url = admin_url( 'admin.php?page='.$page.'&c='.end( $class ).'&m=edit&'.static::$id_field.'='.$this->$id_var );
+      return '<a href="'.$url.'">'.__( 'Edit', static::$ns ).'</a>';
+   }
+   
+   /**
+    * 
+    * Database models will inherit this method and can override the method with their own delete link.
+    * The default method returns a link to the current controller's "delete" method.
+    * Ex: admin.php?page=<current-page>&c=<current-controller>&m=delete&<id-field>=<object-id>
+    * If the "delete" method doesn't exist, a blank string is returned.
+    * @return string
+    */
+   public function delete_link() {
+      $page = filter_input( INPUT_GET, 'page' );
+      $id_var = static::$id_field;
+      $class = explode( '\\', get_called_class() );
+      $url = admin_url( 'admin.php?page='.$page.'&c='.end( $class ).'&m=delete&'.static::$id_field.'='.$this->$id_var.'&'.static::$ns.'nonce='.wp_create_nonce( 'delete' ) );
+      if( function_exists( $class.'::delete' ) ) {
+         return '<a href="'.$url.'">'.__( 'Edit', static::$ns ).'</a>';
+      } else {
+         return '';
+      }
+   }
+   
    private static function log_query( $query, $result_count ) {
       if( static::$log_queries !== false ) {
          return;

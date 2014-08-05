@@ -11,7 +11,7 @@ class AdminActions extends \AtomicWP\BaseController {
     * Go crazy!
     */
    public static function main() {
-      add_action( static::$ns.'default_action', array( 'CaspersCatering\Dashboard', 'get_index' ) );
+      add_action( static::$ns.'default_action', static::$default_callback );
    }
    
 }
