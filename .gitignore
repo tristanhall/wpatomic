@@ -11,3 +11,10 @@ wp-content/cache/
 wp-content/backups/
 sitemap.xml.gz
 wp-config.php
+/site/config.codekit
+/site/index.html
+/site/fonts/
+/site/images/
+/site/css/
+/site/js/
+/site/scss/
