@@ -19,3 +19,6 @@ wp-config.php
 /site/js/
 /site/scss/
 /site/
+/wp-content/plugins/atomicwp/lib/vendor/phpunit/
+/wp-content/plugins/atomicwp/lib/vendor/
+/wp-content/plugins/atomicwp/lib/composer.lock

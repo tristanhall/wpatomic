@@ -1,0 +1,4 @@
+<div class="wrap">
+<p>Current User: {username}</p>
+<p>This is the dashboard.</p>
+</div>

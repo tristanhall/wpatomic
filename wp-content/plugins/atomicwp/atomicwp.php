@@ -10,6 +10,7 @@
  * Text Domain: atomicwp
  */
 
+require_once( __DIR__.'/lib/vendor/autoload.php' );
 require_once( __DIR__.'/controllers/class-base-controller.php' );
 
 \AtomicWP\BaseController::bootstrap();

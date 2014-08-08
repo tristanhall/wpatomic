@@ -1,0 +1,2 @@
+<p>This is contextual help for the dashboard.</p>
+<p>You can create contextual help for any page action simply by<br>creating a file named <code>&lt;controller_name&gt;-&lt;method_name&gt;.dust</code>, <em>(all lowercase please)</em>, in the <code>/views/help</code> directory.</p>

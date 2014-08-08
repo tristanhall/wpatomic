@@ -12,6 +12,7 @@ class AdminActions extends \AtomicWP\BaseController {
     */
    public static function main() {
       add_action( static::$ns.'default_action', static::$default_callback );
+      add_filter( 'contextual_help', array( 'AtomicWP\Template', 'render_help_text' ), 0, 3 );
    }
    
 }

@@ -2,28 +2,28 @@
 
 namespace AtomicWP;
 
-class BaseController {
+abstract class BaseController {
    
    /**
     * Set the name for the plugin's admin menu page title.
     * @var string
     */
-   public static $plugin_name = 'Atomic WP';
+   protected static $plugin_name = 'Atomic WP';
    
    /**
     * Set the icon variable for the plugin's admin menu page.
     * @var string
     */
-   public static $icon = 'dashicons-share';
+   protected static $icon = 'dashicons-share';
    
-   public static $default_callback = array( 'Atomic\Dashboard', 'get_index' );
+   protected static $default_callback = array( 'Atomic\Dashboard', 'get_index' );
    
    /**
     * Set this to your plugin's "short namespace".
     * This is for database table and variable prefixes.
     * @var string
     */
-   public static $ns = 'awp_';
+   protected static $ns = 'awp_';
    
    /**
     * Define the text domain for the plugin.
@@ -31,14 +31,14 @@ class BaseController {
     * enables the core classes to use your namespace. 
     * @var string 
     */
-   public static $domain = 'atomicwp';
+   protected static $domain = 'atomicwp';
    
    /**
     * Set to true to log all database queries made from this plugin
     * in the log table in the database.
     * @var boolean
     */
-   public static $log_queries = false;
+   protected static $log_queries = false;
    
    /**
     * Calls the Install function from the Install class if the controller exists when
@@ -167,6 +167,49 @@ class BaseController {
       }
       if( $_SERVER['REQUEST_METHOD'] == 'POST' && method_exists( $class_name, $post_callback ) ) {
          call_user_func( $class_name.'::'.$post_callback );
+      }
+   }
+   
+   protected static function get_controller() {
+      $default_action = explode( '\\', self::$default_callback[0] );
+      $default_class = $default_action[1];
+      $page = filter_input( INPUT_GET, 'page' );
+      $class = filter_input( INPUT_GET, 'c' );
+      if( !empty( $c ) ) {
+         $pattern = '/((?:[a-z][a-z]+))(\\\\)('.ucfirst( $class ).')/is';
+         $matches = preg_grep( $pattern, get_declared_classes() );
+         $method_parts = explode( '\\', reset( $matches ) );
+         $class_name = $method_parts[0].'\\'.$method_parts[1];
+      } else {
+         $class_name = self::$default_callback[0];
+      }
+      if( $page !== static::$ns.'main' || !is_subclass_of( $class_name, 'AtomicWP\BaseController' ) ) {
+         echo $class_name;
+         return;
+      }
+      return ( !empty( $method_parts[1] ) ? $method_parts[1] : $default_class );
+   }
+   
+   protected static function get_method() {
+      $page = filter_input( INPUT_GET, 'page' );
+      $class = filter_input( INPUT_GET, 'c' );
+      if( !empty( $c ) ) {
+         $pattern = '/((?:[a-z][a-z]+))(\\\\)('.ucfirst( $class ).')/is';
+         $matches = preg_grep( $pattern, get_declared_classes() );
+         $method_parts = explode( '\\', reset( $matches ) );
+         $class_name = $method_parts[0].'\\'.$method_parts[1];
+      } else {
+         $class_name = self::$default_callback[0];
+      }
+      $method = filter_input( INPUT_GET, 'm' );
+      if( $page !== static::$ns.'main' || !is_subclass_of( $class_name, 'AtomicWP\BaseController' ) ) {
+         return;
+      }
+      if( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
+         return ( !empty( $method ) ? 'get_'.$method : self::$default_callback[1] );
+      }
+      if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+         return ( !empty( $method ) ? 'post_'.$method : self::$default_callback[1] );
       }
    }
    
