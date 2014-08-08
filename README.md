@@ -6,7 +6,7 @@ It gives you lots of creative freedom (aka relatively lightweight for now)
 ## Some Features Include:
 
 * MVC architecture
-* Built-in templating class (ad-hoc for the time being)
+* Built-in templating class (using [Dust PHP templating engine](http://cretz.github.io/dust-php/ "Dust PHP A lightweight, powerful templating engine in PHP"))
 * Automatically generates an admin page with GET request routing.
 * Built-in data table generator (pagination, filtering, sorting, etc.) for your custom DB tables.
 * Object-relational mapping
