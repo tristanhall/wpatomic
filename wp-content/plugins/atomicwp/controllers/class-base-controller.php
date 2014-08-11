@@ -175,7 +175,7 @@ abstract class BaseController {
       $default_class = $default_action[1];
       $page = filter_input( INPUT_GET, 'page' );
       $class = filter_input( INPUT_GET, 'c' );
-      if( !empty( $c ) ) {
+      if( !empty( $class ) ) {
          $pattern = '/((?:[a-z][a-z]+))(\\\\)('.ucfirst( $class ).')/is';
          $matches = preg_grep( $pattern, get_declared_classes() );
          $method_parts = explode( '\\', reset( $matches ) );
@@ -184,7 +184,6 @@ abstract class BaseController {
          $class_name = self::$default_callback[0];
       }
       if( $page !== static::$ns.'main' || !is_subclass_of( $class_name, 'AtomicWP\BaseController' ) ) {
-         echo $class_name;
          return;
       }
       return ( !empty( $method_parts[1] ) ? $method_parts[1] : $default_class );
@@ -193,7 +192,7 @@ abstract class BaseController {
    protected static function get_method() {
       $page = filter_input( INPUT_GET, 'page' );
       $class = filter_input( INPUT_GET, 'c' );
-      if( !empty( $c ) ) {
+      if( !empty( $class ) ) {
          $pattern = '/((?:[a-z][a-z]+))(\\\\)('.ucfirst( $class ).')/is';
          $matches = preg_grep( $pattern, get_declared_classes() );
          $method_parts = explode( '\\', reset( $matches ) );

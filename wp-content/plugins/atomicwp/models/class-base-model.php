@@ -32,7 +32,7 @@ abstract class BaseModel extends BaseController {
     * An array of the columns from the list above that should be sortable.
     * @var array
     */
-   protected static $sortable_columns = array();
+   protected static $sort_columns = array();
    
    /**
     * An array of the columns from the list above that should be filterable.
@@ -73,9 +73,9 @@ abstract class BaseModel extends BaseController {
     */
    public function edit_link() {
       $page = filter_input( INPUT_GET, 'page' );
+      $class = filter_input( INPUT_GET, 'c' );
       $id_var = static::$id_field;
-      $class = explode( '\\', get_called_class() );
-      $url = admin_url( 'admin.php?page='.$page.'&c='.end( $class ).'&m=edit&'.static::$id_field.'='.$this->$id_var );
+      $url = admin_url( 'admin.php?page='.$page.'&c='.$class.'&m=edit&'.static::$id_field.'='.$this->$id_var );
       return '<a href="'.$url.'">'.__( 'Edit', static::$ns ).'</a>';
    }
    
@@ -89,9 +89,9 @@ abstract class BaseModel extends BaseController {
     */
    public function delete_link() {
       $page = filter_input( INPUT_GET, 'page' );
+      $class = filter_input( INPUT_GET, 'c' );
       $id_var = static::$id_field;
-      $class = explode( '\\', get_called_class() );
-      $url = admin_url( 'admin.php?page='.$page.'&c='.end( $class ).'&m=delete&'.static::$id_field.'='.$this->$id_var.'&'.static::$ns.'nonce='.wp_create_nonce( 'delete' ) );
+      $url = admin_url( 'admin.php?page='.$page.'&c='.$class.'&m=delete&'.static::$id_field.'='.$this->$id_var.'&'.static::$ns.'nonce='.wp_create_nonce( 'delete' ) );
       if( function_exists( $class.'::delete' ) ) {
          return '<a href="'.$url.'">'.__( 'Edit', static::$ns ).'</a>';
       } else {
@@ -258,10 +258,10 @@ abstract class BaseModel extends BaseController {
     * has been already defined.
     * @param object $query
     */
-   public static function sort_handler( $query ) {
+   public static function sort_handler( $query, $called ) {
       $orderby = filter_input( INPUT_GET, 'orderby', FILTER_SANITIZE_STRING );
       $order = filter_input( INPUT_GET, 'order', FILTER_SANITIZE_STRING );
-      if( empty( $query->order ) ) {
+      if( empty( $query->order ) && in_array( $orderby, $called::$sort_columns ) ) {
          $query->order = 'ORDER BY `'.( !empty( $orderby ) ? $orderby : static::$id_field ).'` '.( !empty( $order ) ? $order : 'DESC' );
       }
       return $query;
@@ -271,12 +271,12 @@ abstract class BaseModel extends BaseController {
     * Append a WHERE clause if the URL parameters are set for filtering.
     * @param object $query
     */
-   public static function filter_handler( $query ) {
+   public static function filter_handler( $query, $called ) {
       $filter_column = filter_input( INPUT_GET, 'filter', FILTER_SANITIZE_STRING );
       if( !is_array( $query->where ) ) {
          $query->where = array();
       }
-      if( in_array( $filter_column, static::$filter_columns ) ) {
+      if( in_array( $filter_column, $called::$filter_columns ) ) {
          $query->where[] = '`'.$filter_column.'` = 1';
       }
       return $query;
@@ -305,17 +305,18 @@ abstract class BaseModel extends BaseController {
    
    public static function render_data_table( $echo = true ) {
       global $wpdb;
+      $called_class = get_called_class();
       $query = new \stdClass();
       $query->select = 'SELECT * FROM `'.$wpdb->prefix.static::$ns.static::$table_name.'` WHERE 1';
       $query->where = array();
       $query->order = '';
       $query->limit = '';
-      add_filter( static::$ns.'_query_where', array( __CLASS__, 'filter_handler' ), 10, 1 );
-      $query = apply_filters( static::$ns.'_query_where', $query );
-      add_filter( static::$ns.'_query_order', array( __CLASS__, 'sort_handler' ), 10, 1 );
-      $query = apply_filters( static::$ns.'_query_order', $query );
-      add_filter( static::$ns.'_query_limit', array( __CLASS__, 'pagination_handler' ), 10, 1 );
-      $query = apply_filters( static::$ns.'_query_limit', $query );
+      add_filter( static::$ns.'_query_where', array( __CLASS__, 'filter_handler' ), 10, 2 );
+      $query = apply_filters( static::$ns.'_query_where', $query, $called_class );
+      add_filter( static::$ns.'_query_order', array( __CLASS__, 'sort_handler' ), 10, 2 );
+      $query = apply_filters( static::$ns.'_query_order', $query, $called_class );
+      add_filter( static::$ns.'_query_limit', array( __CLASS__, 'pagination_handler' ), 10, 2 );
+      $query = apply_filters( static::$ns.'_query_limit', $query, $called_class );
       $where_string = count( $query->where ) > 0 ? ' AND '.implode( ' AND ', $query->where ) : '';
       $query_string = trim( $query->select.' '.$where_string.' '.$query->order.' '.$query->limit );
       $result_set = $wpdb->get_results( $query_string );
@@ -326,7 +327,7 @@ abstract class BaseModel extends BaseController {
       $table->body = static::build_data_table_body( $result_set );
       $table->footer = static::build_data_table_footer();
       $table_class = static::$ns.static::$table_name;
-      $html = '<table class="wp-list-table '.static::$ns.'-table widefat fixed '.$table_class.'">'.$table->header.$table->body.$table->footer.'</table>';
+      $html = '<table class="wp-list-table '.static::$ns.'table widefat fixed '.$table_class.'">'.$table->header.$table->body.$table->footer.'</table>';
       if( $echo === true ) {
          echo $html;
       } else {
@@ -336,6 +337,7 @@ abstract class BaseModel extends BaseController {
    
    private static function build_data_table_header() {
       $page = filter_input( INPUT_GET, 'page', FILTER_SANITIZE_STRING );
+      $class = filter_input( INPUT_GET, 'c', FILTER_SANITIZE_STRING );
       $orderby = filter_input( INPUT_GET, 'orderby', FILTER_SANITIZE_STRING );
       $order = filter_input( INPUT_GET, 'order', FILTER_SANITIZE_STRING );
       $header_html = '<thead><tr>';
@@ -344,14 +346,14 @@ abstract class BaseModel extends BaseController {
          $next_order = $order == 'ASC' ? 'DESC' : 'ASC';
          $cell_class .= $column_name == $orderby ? ' sorted '.$order : ' '.$next_order;
          $header_html .= '<th scope="col" class="'.$cell_class.'">';
-         if( in_array( $column_name, static::$sortable_columns ) ) {
-            $url = admin_url( 'admin.php?page='.$page.'&orderby='.$column_name.'&order='.$next_order );
+         if( in_array( $column_name, static::$sort_columns ) ) {
+            $url = admin_url( 'admin.php?page='.$page.'&c='.$class.'&orderby='.$column_name.'&order='.$next_order );
             add_filter( static::$ns.'_sort_url', array( __CLASS__, 'build_sort_url' ), 10, 1 );
             $url = apply_filters( static::$ns.'_sort_url', $url );
             $header_html .= '<a href="'.$url.'" title="'.__( 'Sort by '.$settings['label'], static::$domain ).'">';
             $header_html .= '<span>'.__( $settings['label'], static::$domain ).'</span>';
-            $header_html .= '</a>';
             $header_html .= '<span class="sorting-indicator"></span>';
+            $header_html .= '</a>';
          } else {
             $header_html .= '<span>'.__( $settings['label'], static::$domain ).'</span>';
          }
