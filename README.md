@@ -1,17 +1,41 @@
 #AtomicWP
+A Composer package for drastically speeding up WordPress plugin development.
 
-A simple, dev-friendly framework for quickly building WordPress plugins.
-It gives you lots of creative freedom (aka relatively lightweight for now)
+##Installation
+ 1. Install from Composer: `composer require tristanhall/wpatomic`
+	 - Note: Run this from inside the plugin folder where you want to use WPAtomic.
+ 2. Setup your directory structure:
+	 - `/wp-content`
+		 - `/plugins`
+			 - `/my-plugin`
+				 - `/controllers`
+				 - `/models`
+				 - `/views`
+ 3. Start Coding
 
-## Some Features Include:
+##Controllers
+A very basic controller:
 
-* MVC architecture
-* Built-in templating class (using [Dust PHP templating engine](http://cretz.github.io/dust-php/ "Dust PHP A lightweight, powerful templating engine in PHP"))
-* Automatically generates an admin page with GET request routing.
-* Built-in data table generator (pagination, filtering, sorting, etc.) for your custom DB tables.
-* Object-relational mapping
+    <?php
+    namespace TH\Stashbox;
+    
+    use TH\WPAtomic\Template;
+    
+    class CoreController {
+    
+	    public function action_init() {
+			//This is the same as "add_action( 'init', ... );"
+		}
+		
+		public function filter_the_content() {
+			//This is the same as "add_filter( 'the_content', ... );"
+		}
+    
+    }
 
-## Contribute
+ - Starting a function with `action_{wp_action_name}` will tell WPAtomic to add that function to the WordPress action you name.
+ - Starting a function with `filter_{wp_action_name}` will tell WPAtomic to add that function to the WordPress filter you name.
 
-I'm releasing this in hopes that it helps other developers build WP plugins faster.
-I also hope to continue to improve it over time and any help would be greatly appreciated.
+##Models
+
+##Views
