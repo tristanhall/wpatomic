@@ -39,3 +39,11 @@ Controller class names must end with `Controller` for WPAtomic to register them 
 ##Models
 
 ##Views
+
+##Roadmap
+ - More documentation (models, views, templating, etc.)
+ - Improved Taxonomy models
+ - Term models
+ - Role Models
+ - User models
+ - Performance Improvements
