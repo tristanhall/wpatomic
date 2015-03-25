@@ -2,7 +2,7 @@
 A Composer package for drastically speeding up WordPress plugin development.
 
 ##Installation
- 1. Install from Composer: `composer require tristanhall/wpatomic`
+ 1. Install from Composer: `composer require --dev tristanhall/wpatomic`
 	 - Note: Run this from inside the plugin folder where you want to use WPAtomic.
  2. Setup your directory structure:
 	 - `/wp-content`
