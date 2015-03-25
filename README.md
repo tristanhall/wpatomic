@@ -14,8 +14,8 @@ A Composer package for drastically speeding up WordPress plugin development.
  3. Start Coding
 
 ##Controllers
-A very basic controller:
-
+Controller class names must end with `Controller` for WPAtomic to register them properly. Additionally, the controller filenames must match the class names.
+###A basic controller:
     <?php
     namespace TH\Stashbox;
     
