@@ -1,6 +1,6 @@
 {
    "name": "tristanhall/wpatomic",
-   "description": "A light framework for WordPress plugins that uses PHP on the molecular level.",
+   "description": "A light framework for dramatically speeding up WordPress plugin development.",
    "keywords": [
       "wordpress", "framework", "actions", "filters", "plugins", "atomic"
    ],
