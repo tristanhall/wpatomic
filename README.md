@@ -1,4 +1,4 @@
-#AtomicWP
+#WPAtomic
 A Composer package for drastically speeding up WordPress plugin development.
 
 ##Installation
