@@ -11,7 +11,10 @@ A Composer package for drastically speeding up WordPress plugin development.
 				 - `/controllers`
 				 - `/models`
 				 - `/views`
- 3. Start Coding
+ 3. Add the following tidbit to your main plugin file:
+    `require_once( __DIR__.'/vendor/autoload.php' );`
+    `\TH\WPAtomic\WPAtomic::init( __NAMESPACE__, __DIR__ );`
+    Note: The first parameter is the namespace you will use for your controllers and models. The second parameter is optional, it is the path to your plugin. WPAtomic attempts to discover the path on its own, but will throw a `RuntimeException` if it can't find the path.
 
 ##Controllers
 Controller class names must end with `Controller` for WPAtomic to register them properly. Additionally, the controller filenames must match the class names.
