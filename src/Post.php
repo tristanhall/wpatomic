@@ -144,6 +144,10 @@ abstract class Post {
       if( is_numeric( $post_id ) ) {
          $this->ID = $post_id;
          $p = get_post( $post_id );
+         $props = get_object_vars( $p );
+         foreach( $props as $k => $v ) {
+         	$this->$k = $v;
+         }
       }
       return $this->ID;
    }
