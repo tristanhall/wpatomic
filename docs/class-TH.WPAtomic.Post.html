@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class TH\WPAtomic\Post | WPAtomic Source Code Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?3772417440"></script>
+	<script type="text/javascript" src="elementlist.js?1641078546"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-TH.html">TH<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-TH.WPAtomic.html">WPAtomic</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-TH.WPAtomic.Post.html">Post</a></li>
+				<li><a href="class-TH.WPAtomic.Role.html">Role</a></li>
+				<li><a href="class-TH.WPAtomic.Taxonomy.html">Taxonomy</a></li>
+				<li><a href="class-TH.WPAtomic.Template.html">Template</a></li>
+				<li><a href="class-TH.WPAtomic.Term.html">Term</a></li>
+				<li><a href="class-TH.WPAtomic.User.html">User</a></li>
+				<li><a href="class-TH.WPAtomic.WpAtomic.html">WpAtomic</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-TH.WPAtomic.html" title="Summary of TH\WPAtomic"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Post</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-TH.html">TH</a>\<a href="namespace-TH.WPAtomic.html">WPAtomic</a><br>
+		
+
+		<b>Located at</b> <a href="source-class-TH.WPAtomic.Post.html#4-301" title="Go to source code">Post.php</a><br>
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="registerPostType" id="_registerPostType">
+
+		<td class="attributes"><code>
+			 public static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_registerPostType">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#105-115" title="Go to source code">registerPostType</a>( )</code>
+
+		<div class="description short">
+			
+<p>Register the custom post type.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Register the custom post type.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getAll" id="_getAll">
+
+		<td class="attributes"><code>
+			 public static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAll">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#117-135" title="Go to source code">getAll</a>( <span>mixed <var>$convert_posts</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Retrieve all of the posts of this type.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Retrieve all of the posts of this type.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#137-152" title="Go to source code">__construct</a>( <span>integer <var>$post_id</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Construct a new WPAtomic post object. If an ID is provided, retrieve the post
+from the DB.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Construct a new WPAtomic post object. If an ID is provided, retrieve the post
+from the DB.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$post_id</var></dt>
+					<dd><code>integer</code><br>$post_id (default: null)</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__get" id="___get">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___get">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#154-172" title="Go to source code">__get</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Get the meta value of the post. Check the meta array first. If a Post ID is
+defined, retrieve the meta value from the DB.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the meta value of the post. Check the meta array first. If a Post ID is
+defined, retrieve the meta value from the DB.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd><code>string</code><br>$key</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__set" id="___set">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___set">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#174-189" title="Go to source code">__set</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the meta property for a post, update the DB if a post ID is set.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the meta property for a post, update the DB if a post ID is set.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd><code>string</code><br>$key</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>mixed</code><br>$value</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getID" id="_getID">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getID">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#191-200" title="Go to source code">getID</a>( )</code>
+
+		<div class="description short">
+			
+<p>Get the ID of the post.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the ID of the post.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getName" id="_getName">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getName">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#202-211" title="Go to source code">getName</a>( )</code>
+
+		<div class="description short">
+			
+<p>Get the post name/slug.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the post name/slug.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setName" id="_setName">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setName">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#213-223" title="Go to source code">setName</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the post name/slug.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the post name/slug.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTitle" id="_getTitle">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTitle">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#225-234" title="Go to source code">getTitle</a>( )</code>
+
+		<div class="description short">
+			
+<p>Get the post title.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the post title.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setTitle" id="_setTitle">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setTitle">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#236-248" title="Go to source code">setTitle</a>( <span>string <var>$title</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the post title. If a post name is not set, create one.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the post title. If a post name is not set, create one.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$title</var></dt>
+					<dd><code>string</code><br>$title</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="save" id="_save">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_save">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#250-279" title="Go to source code">save</a>( )</code>
+
+		<div class="description short">
+			
+<p>Save a post and its meta to the database.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Save a post and its meta to the database.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="walk" id="_walk">
+
+		<td class="attributes"><code>
+			 public static
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_walk">#</a>
+		<code><a href="source-class-TH.WPAtomic.Post.html#281-299" title="Go to source code">walk</a>( <span>object|WP_Post <var>&amp; $_post</var></span>, <span>mixed <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Take a WP_Post object's public properties and re-assign them to a
+WPAtomic\Post.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Take a WP_Post object's public properties and re-assign them to a
+WPAtomic\Post.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$_post</var></dt>
+					<dd><code>object|WP_Post</code><br>$_post</dd>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="ID" id="$ID">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TH.WPAtomic.Post.html#7-13" title="Go to source code"><var>$ID</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">null</span></code></td>
+		<td class="description"><div>
+			<a href="#$ID" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The Post ID.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The Post ID.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="post_title" id="$post_title">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TH.WPAtomic.Post.html#15-23" title="Go to source code"><var>$post_title</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">''</span></code></td>
+		<td class="description"><div>
+			<a href="#$post_title" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The Post Title</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The Post Title</p>
+
+<p>(default value: '')</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="post_name" id="$post_name">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TH.WPAtomic.Post.html#25-33" title="Go to source code"><var>$post_name</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">''</span></code></td>
+		<td class="description"><div>
+			<a href="#$post_name" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The Post Name/Slug</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The Post Name/Slug</p>
+
+<p>(default value: '')</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="meta" id="$meta">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TH.WPAtomic.Post.html#35-44" title="Go to source code"><var>$meta</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$meta" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Post meta container array.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Post meta container array.</p>
+
+<p>(default value: array())</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="post_type" id="$post_type">
+		<td class="attributes"><code>
+			protected static 
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TH.WPAtomic.Post.html#46-55" title="Go to source code"><var>$post_type</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">''</span></code></td>
+		<td class="description"><div>
+			<a href="#$post_type" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Define the machine name of the post type.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Define the machine name of the post type.</p>
+
+<p>(default value: '')</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="post_labels" id="$post_labels">
+		<td class="attributes"><code>
+			protected static 
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TH.WPAtomic.Post.html#57-79" title="Go to source code"><var>$post_labels</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(
+	<span class="php-quote">'name'</span>               =&gt; <span class="php-quote">'Custom Posts'</span>,
+	<span class="php-quote">'singular_name'</span>      =&gt; <span class="php-quote">'Custom Post'</span>,
+	<span class="php-quote">'menu_name'</span>          =&gt; <span class="php-quote">'Custom Posts'</span>,
+	<span class="php-quote">'name_admin_bar'</span>     =&gt; <span class="php-quote">'Custom Post'</span>,
+	<span class="php-quote">'add_new'</span>            =&gt; <span class="php-quote">'Add New'</span>,
+	<span class="php-quote">'add_new_item'</span>       =&gt; <span class="php-quote">'Add New Custom Post'</span>,
+	<span class="php-quote">'new_item'</span>           =&gt; <span class="php-quote">'New Custom Post'</span>,
+	<span class="php-quote">'edit_item'</span>          =&gt; <span class="php-quote">'Edit Custom Post'</span>,
+	<span class="php-quote">'view_item'</span>          =&gt; <span class="php-quote">'View Custom Post'</span>,
+	<span class="php-quote">'all_items'</span>          =&gt; <span class="php-quote">'All Custom Posts'</span>,
+	<span class="php-quote">'search_items'</span>       =&gt; <span class="php-quote">'Search Custom Posts'</span>,
+	<span class="php-quote">'parent_item_colon'</span>  =&gt; <span class="php-quote">'Parent Custom Posts:'</span>,
+	<span class="php-quote">'not_found'</span>          =&gt; <span class="php-quote">'No custom posts found.'</span>,
+	<span class="php-quote">'not_found_in_trash'</span> =&gt; <span class="php-quote">'No custom posts found in Trash.'</span>
+)</code></td>
+		<td class="description"><div>
+			<a href="#$post_labels" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Define the language terms for the post type.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Define the language terms for the post type.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="post_args" id="$post_args">
+		<td class="attributes"><code>
+			protected static 
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TH.WPAtomic.Post.html#81-103" title="Go to source code"><var>$post_args</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(
+    <span class="php-quote">'labels'</span>             =&gt; <span class="php-keyword1">array</span>(),
+	<span class="php-quote">'public'</span>             =&gt; <span class="php-keyword1">true</span>,
+	<span class="php-quote">'publicly_queryable'</span> =&gt; <span class="php-keyword1">false</span>,
+	<span class="php-quote">'show_ui'</span>            =&gt; <span class="php-keyword1">true</span>,
+	<span class="php-quote">'show_in_menu'</span>       =&gt; <span class="php-keyword1">true</span>,
+	<span class="php-quote">'query_var'</span>          =&gt; <span class="php-keyword1">true</span>,
+	<span class="php-quote">'rewrite'</span>            =&gt; <span class="php-keyword1">false</span>,
+	<span class="php-quote">'capability_type'</span>    =&gt; <span class="php-quote">'post'</span>,
+	<span class="php-quote">'has_archive'</span>        =&gt; <span class="php-keyword1">false</span>,
+	<span class="php-quote">'hierarchical'</span>       =&gt; <span class="php-keyword1">false</span>,
+	<span class="php-quote">'menu_position'</span>      =&gt; <span class="php-num">30</span>,
+	<span class="php-quote">'menu_icon'</span>          =&gt; <span class="php-quote">''</span>,
+	<span class="php-quote">'taxonomies'</span>         =&gt; <span class="php-keyword1">array</span>(),
+	<span class="php-quote">'supports'</span>           =&gt; <span class="php-keyword1">array</span>( <span class="php-quote">'title'</span>, <span class="php-quote">'page-attributes'</span>, <span class="php-quote">'editor'</span>, <span class="php-quote">'author'</span> ),
+)</code></td>
+		<td class="description"><div>
+			<a href="#$post_args" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Define the arguemnts for the post type.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Define the arguemnts for the post type.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		WPAtomic Source Code Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

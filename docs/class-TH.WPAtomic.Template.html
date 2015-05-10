@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class TH\WPAtomic\Template | WPAtomic Source Code Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?3772417440"></script>
+	<script type="text/javascript" src="elementlist.js?1641078546"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-TH.html">TH<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-TH.WPAtomic.html">WPAtomic</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-TH.WPAtomic.Post.html">Post</a></li>
+				<li><a href="class-TH.WPAtomic.Role.html">Role</a></li>
+				<li><a href="class-TH.WPAtomic.Taxonomy.html">Taxonomy</a></li>
+				<li class="active"><a href="class-TH.WPAtomic.Template.html">Template</a></li>
+				<li><a href="class-TH.WPAtomic.Term.html">Term</a></li>
+				<li><a href="class-TH.WPAtomic.User.html">User</a></li>
+				<li><a href="class-TH.WPAtomic.WpAtomic.html">WpAtomic</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-TH.WPAtomic.html" title="Summary of TH\WPAtomic"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Template</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-TH.html">TH</a>\<a href="namespace-TH.WPAtomic.html">WPAtomic</a><br>
+		
+
+		<b>Located at</b> <a href="source-class-TH.WPAtomic.Template.html#4-109" title="Go to source code">Template.php</a><br>
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="make" id="_make">
+
+		<td class="attributes"><code>
+			 public static
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_make">#</a>
+		<code><a href="source-class-TH.WPAtomic.Template.html#29-64" title="Go to source code">make</a>( <span>string <var>$template_name</var></span>, <span>array <var>$context</var> = <span class="php-keyword1">array</span>()</span>, <span>boolean <var>$echo</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Extract the given variables from $data and include the template. Echoing the
+output is optional.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Extract the given variables from $data and include the template. Echoing the
+output is optional.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$template_name</var></dt>
+					<dd><code>string</code><br>$template_name</dd>
+					<dt><var>$context</var></dt>
+					<dd><code>array</code><br>$context</dd>
+					<dt><var>$echo</var></dt>
+					<dd><code>boolean</code><br>$echo</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="makeString" id="_makeString">
+
+		<td class="attributes"><code>
+			 public static
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_makeString">#</a>
+		<code><a href="source-class-TH.WPAtomic.Template.html#66-85" title="Go to source code">makeString</a>( <span>string <var>$template_string</var></span>, <span>array <var>$context</var> = <span class="php-keyword1">array</span>()</span>, <span>boolean <var>$echo</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Takes a string, replaces the "shortcodes" (e.g. [variable1]) with the real
+values from $data and echos the string. Echoing the string is optional.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Takes a string, replaces the "shortcodes" (e.g. [variable1]) with the real
+values from $data and echos the string. Echoing the string is optional.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$template_string</var></dt>
+					<dd><code>string</code><br>$template_string</dd>
+					<dt><var>$context</var></dt>
+					<dd><code>array</code><br>$context</dd>
+					<dt><var>$echo</var></dt>
+					<dd><code>boolean</code><br>$echo</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="makeJson" id="_makeJson">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_makeJson">#</a>
+		<code><a href="source-class-TH.WPAtomic.Template.html#87-107" title="Go to source code">makeJson</a>( <span>array <var>$context</var> = <span class="php-keyword1">array</span>()</span>, <span>boolean <var>$echo</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Return a JSON response, typically for AJAX requests.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Return a JSON response, typically for AJAX requests.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$context</var></dt>
+					<dd><code>array</code><br>$context (default: array())</dd>
+					<dt><var>$echo</var></dt>
+					<dd><code>boolean</code><br>$echo (default: true)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="views_dir" id="$views_dir">
+		<td class="attributes"><code>
+			private static 
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TH.WPAtomic.Template.html#7-16" title="Go to source code"><var>$views_dir</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">'/views/'</span></code></td>
+		<td class="description"><div>
+			<a href="#$views_dir" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Set the directory for the template files.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set the directory for the template files.</p>
+
+<p>(default value: '/../views/')</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="views_ext" id="$views_ext">
+		<td class="attributes"><code>
+			private static 
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TH.WPAtomic.Template.html#18-27" title="Go to source code"><var>$views_ext</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">'.php'</span></code></td>
+		<td class="description"><div>
+			<a href="#$views_ext" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Set the extension for the template files.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Set the extension for the template files.</p>
+
+<p>(default value: '.php')</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		WPAtomic Source Code Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
