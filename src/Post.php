@@ -135,22 +135,25 @@ abstract class Post
         }
         return is_array($posts) ? $posts : array();
     }
-   
-    /**
-     * Construct a new WPAtomic post object.
-     * If an ID is provided, retrieve the post from the DB.
-     * 
-     * @access public
-     * @param integer $post_id (default: null)
-     * @return void
-     */
-    public function __construct($post_id = null)
-    {
-        if (is_numeric($post_id)) {
-            $this->ID = $post_id;
-            $p = get_post($post_id);
-        }
-    }
+    
+   /**
+    * Construct a new WPAtomic post object.
+    * If an ID is provided, retrieve the post from the DB.
+    * 
+    * @access public
+    * @param integer $post_id (default: null)
+    * @return void
+    */
+   public function __construct( $post_id = null ) {
+      if( is_numeric( $post_id ) ) {
+         $this->ID = $post_id;
+         $p = get_post( $post_id );
+         $props = get_object_vars( $p );
+         foreach( $props as $k => $v ) {
+         	$this->$k = $v;
+         }
+      }
+   }
    
     /**
      * Get the meta value of the post.
