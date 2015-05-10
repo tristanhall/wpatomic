@@ -1,4 +1,4 @@
-#WPAtomic ![Version 0.2](https://img.shields.io/github/tag/triscuittt/wpatomic.svg)
+#WPAtomic ![Version 0.2](https://img.shields.io/github/tag/triscuittt/wpatomic.svg?label=Release)
 A Composer package for drastically speeding up WordPress plugin development.
 
 ##Installation
